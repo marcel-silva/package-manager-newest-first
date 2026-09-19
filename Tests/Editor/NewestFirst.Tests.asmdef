@@ -1,0 +1,7 @@
+{
+  "name": "NewestFirst.Tests",
+  "references": ["NewestFirst.Editor"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}

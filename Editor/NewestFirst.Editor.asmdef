@@ -1,0 +1,6 @@
+{
+  "name": "NewestFirst.Editor",
+  "rootNamespace": "NewestFirst",
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

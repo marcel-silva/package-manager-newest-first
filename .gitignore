@@ -1,0 +1,9 @@
+/Library/
+/Temp/
+/Logs/
+/obj/
+/TestResults/
+/TestResults~/
+*.csproj
+*.sln
+.DS_Store
