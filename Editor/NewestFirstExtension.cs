@@ -172,6 +172,7 @@ namespace NewestFirst
             ascDates = descDates = null;
             Status = status;
             nextCheck = EditorApplication.timeSinceStartup + 900;
+            TryRefresh();
         }
 
         private static void TryRefresh()
