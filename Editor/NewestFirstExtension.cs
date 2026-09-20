@@ -59,8 +59,9 @@ namespace NewestFirst
         private static void Install()
         {
             // Deliberately narrow until more Editor versions have been tested.
-            if (!Application.unityVersion.StartsWith("6000.4.", StringComparison.Ordinal))
-                throw new NotSupportedException("Only Unity 6000.4.x is supported by this experimental release.");
+            if (!Application.unityVersion.StartsWith("6000.4.", StringComparison.Ordinal) &&
+                Application.unityVersion != "6000.7.0b1")
+                throw new NotSupportedException("This test build supports Unity 6000.4.x and 6000.7.0b1 only.");
             editorAssembly = typeof(Editor).Assembly;
             var services = editorAssembly.GetType(Prefix + "ServicesContainer", true);
             container = services.GetProperty("instance", Flags)?.GetValue(null);
