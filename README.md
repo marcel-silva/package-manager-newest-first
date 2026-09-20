@@ -25,7 +25,7 @@ Download/clone this repository, then in Unity use **Window → Package Managemen
 Alternatively, choose **Install package from Git URL** and paste this release-pinned URL:
 
 ```text
-https://github.com/marcel-silva/package-manager-newest-first.git#v0.1.1
+https://github.com/marcel-silva/package-manager-newest-first.git#v0.1.2
 ```
 
 Open **My Assets**, select **Purchased date**, and let Auto detection finish. If the window was already open, the extension requests a refresh after detection.

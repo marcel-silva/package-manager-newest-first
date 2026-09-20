@@ -11,6 +11,11 @@ namespace NewestFirst
     public enum WorkaroundMode { Auto, Enabled, Disabled }
 
     [InitializeOnLoad]
+#if UNITY_6000_5_OR_NEWER
+    // Editor service state must survive Play mode transitions. Uninstall explicitly
+    // restores the factory on disable, assembly reload, and Editor shutdown.
+    [Unity.Scripting.LifecycleManagement.NoAutoStaticsCleanup]
+#endif
     public static class NewestFirstExtension
     {
         private const string MenuRoot = "Tools/Package Manager Newest First/";

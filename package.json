@@ -1,6 +1,6 @@
 {
   "name": "dev.community.package-manager-newest-first",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "displayName": "Package Manager Newest First",
   "description": "Experimental Editor-only workaround for reversed Asset Store purchase-date sorting. Uses unsupported internal Editor APIs; not an Asset Store submission.",
   "unity": "6000.4",

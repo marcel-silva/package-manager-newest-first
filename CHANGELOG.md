@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2 — 2026-09-20
+
+- Annotated the Editor service with NoAutoStaticsCleanup on Unity 6000.5+ to resolve UAL0010/UAL0013 while preserving its explicit factory cleanup lifecycle.
+- Verified recompilation on 6000.7.0b1 with zero assembly compiler messages. The annotation is excluded on 6000.4.
+
 ## 0.1.1 — 2026-09-20
 
 - Added support for exactly Unity 6000.7.0b1 alongside 6000.4.x.
