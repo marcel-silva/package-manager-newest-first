@@ -12,9 +12,11 @@ Unity 6000.4 requests `orderBy=purchased_date&order=desc`. On the service tested
 - Not affiliated with or endorsed by Unity.
 - **Not eligible for Asset Store submission in its current form:** guideline 2.5.g prohibits use of internal Editor APIs discovered through reflection. Intended for direct source/Git distribution.
 
-## Unity 6.7 source comparison
+## Unity 6.7 reproduction
 
-On 20 September 2026, inspection of Unity's 6000.7 reference source confirmed that Purchased date still sends `orderBy=purchased_date&order=desc`. Query construction and filtering were refactored, but the requested direction is unchanged. This is a **source-only finding**, not confirmation that the issue reproduces in the 6.7 Editor; service behavior can change independently. This package still supports only 6000.4.x. See the [comparison and pinned source](Documentation~/UNITY-BUG-REPORT.md#unity-60007-source-comparison).
+On 20 September 2026, the maintainer reproduced oldest-first ordering in a newly created URP project using **6000.7.0b1 (6f112f2bea37)** on Windows, without this workaround installed. The supplied screenshot shows Purchased date selected, an empty search, and RageSpline at the top with a purchase date of April 25, 2011. Project version and absence of the workaround were also checked on disk.
+
+The 6000.7 reference source still sends `orderBy=purchased_date&order=desc`; surrounding refactoring does not change that direction. This confirms the UI symptom in that beta on the tested account, not the precise backend cause. **The workaround itself has not been validated on 6.7 and still supports only 6000.4.x.** See the [reproduction and source comparison](Documentation~/UNITY-BUG-REPORT.md#unity-600070b1-runtime-reproduction).
 
 ## Install
 

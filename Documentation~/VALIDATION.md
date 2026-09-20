@@ -2,11 +2,13 @@
 
 ## Environment
 
-Windows, Unity 6000.4.5f1, existing signed-in project and Asset Store account. Other operating systems and Unity releases have not been tested.
+Workaround validation: Windows, Unity 6000.4.5f1, existing signed-in project and Asset Store account. Separate bug reproduction: Windows, Unity 6000.7.0b1, new URP project without the workaround. Other operating systems and workaround compatibility on other Unity releases have not been tested.
 
-## Unity 6000.7: source review only
+## Unity 6000.7: source review and maintainer reproduction
 
-The 6000.7 reference source was inspected on 20 September 2026. `PurchasedDateDesc` still produces `orderBy=purchased_date&order=desc`; surrounding query/filter refactoring does not change that direction. See the [pinned source comparison](UNITY-BUG-REPORT.md#unity-60007-source-comparison). No 6.7 runtime test or package compatibility is claimed. Support remains limited to 6000.4.x.
+The 6000.7 reference source was inspected on 20 September 2026. `PurchasedDateDesc` still produces `orderBy=purchased_date&order=desc`; surrounding query/filter refactoring does not change that direction. See the [pinned source comparison](UNITY-BUG-REPORT.md#unity-60007-source-comparison).
+
+The maintainer then reproduced the UI symptom in a new URP project using 6000.7.0b1 (6f112f2bea37), without the workaround. Their screenshot shows Purchased date selected and a 2011 purchase first. The project version and absence of workaround references in Assets/Packages were checked on disk. This is maintainer-provided runtime evidence, not a repeat of the asc/desc API probe on 6.7. The extension was not installed or tested there; package support remains limited to 6000.4.x.
 
 ## Confirmed in the running Editor
 
@@ -33,7 +35,7 @@ These are the same synchronous NUnit fixtures shipped under `Tests/Editor`; the 
 
 ## Remaining checks
 
-The Unity Test Runner attempt was blocked while the Editor stopped servicing main-thread commands. No successful Unity Test Runner result is claimed. Clean-project reproduction, full Editor process restart, end-to-end UI mode toggles/removal, sign-out/relogin, long-duration periodic detection, and macOS/Linux remain unverified. Search/filter URL preservation and non-purchase sort behavior were tested at policy level, not by manually exercising every UI control.
+The Unity Test Runner attempt was blocked while the Editor stopped servicing main-thread commands. No successful Unity Test Runner result is claimed. Full Editor process restart, end-to-end UI mode toggles/removal, sign-out/relogin, long-duration periodic detection, and macOS/Linux remain unverified. Search/filter URL preservation and non-purchase sort behavior were tested at policy level, not by manually exercising every UI control. Clean-project reproduction of the original bug was subsequently supplied by the maintainer on 6000.7.0b1 as described above.
 
 ## Reproduce standalone checks on Windows
 

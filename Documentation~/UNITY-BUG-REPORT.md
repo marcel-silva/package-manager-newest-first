@@ -59,7 +59,22 @@ PageSortOption.PurchasedDateDesc => "&orderBy=purchased_date&order=desc",
 
 Compared with 6000.4, filters and collections were refactored, and query fragments now include their own leading `&`. Previously the caller appended that separator. The effective purchase-date request direction is unchanged.
 
-This establishes only that this file retains the same request semantics. It does **not** establish that Unity 6.7 reproduces the bug, that no fix exists elsewhere, or that the service remains affected. Runtime reproduction in a clean 6.7 project, without this workaround, is still pending. The package's 6000.4-only compatibility guard remains unchanged.
+This source comparison establishes only that this file retains the same request semantics. Separate runtime evidence is recorded below. The package's 6000.4-only compatibility guard remains unchanged.
+
+## Unity 6000.7.0b1 runtime reproduction
+
+On 20 September 2026, the maintainer created a new URP project named BugFound on Windows and reproduced the issue in **6000.7.0b1 (6f112f2bea37)** without installing the workaround.
+
+The supplied screenshot shows:
+
+- Unity 6.7 Beta (6000.7.0b1) in the title bar.
+- My Assets with Purchased date selected and no search text.
+- RageSpline first, with Purchase Date April 25, 2011, followed by iTween and Xffect Editor.
+- The URP template scene and an empty Console (zero errors/warnings).
+
+The project version was independently verified from ProjectVersion.txt. The project manifest and Assets/Packages source search contained no reference to this workaround. The screenshot is retained by the reporter; it has not been added to this public repository because it contains their purchase list.
+
+This is a new-project reproduction of the UI issue on the same account. It does not isolate account/service caches, establish behavior for all accounts, or repeat the direct asc/desc request comparison on 6.7. Workaround compatibility with 6.7 has not been tested.
 
 ## Impact
 
@@ -76,7 +91,7 @@ An unsupported local Editor extension changes only purchase-date requests from d
 
 ## Before submitting
 
-- Reproduce in a small clean project using the same account, with the workaround absent. This has not yet been tested in a clean project.
+- New-project reproduction without the workaround is recorded above for 6000.7.0b1. Include that version in the submitted report.
 - Add a screenshot showing the sort menu and an old purchase at the top.
 - Review attached Editor logs for credentials/account data; do not attach command lines containing access tokens or full purchase-response dumps.
 - Include the exact date/time because service behavior can change independently of Editor versions.
