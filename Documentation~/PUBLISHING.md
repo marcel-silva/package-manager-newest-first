@@ -18,4 +18,4 @@ When creating the GitHub release, select the existing v0.1.1 tag and mark it **p
 
 For future releases, update package.json, CHANGELOG.md, compatibility notes and the installation URL together. Validate the exact supported versions, commit, then create and push a new version tag. Avoid adding game assets, Editor logs, access tokens or purchase-response files.
 
-The prepared Unity bug report has not been submitted automatically.
+The maintainer submitted the Unity bug report and received acknowledgement as IN-154571. Unity has not yet confirmed reproduction or a fix.

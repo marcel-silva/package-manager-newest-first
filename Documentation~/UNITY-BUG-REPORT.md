@@ -1,4 +1,10 @@
-# Bug report draft: My Assets purchase-date ordering is reversed
+# Unity report IN-154571: My Assets purchase-date ordering is reversed
+
+## Submission status
+
+The maintainer submitted this issue and received Unity's acknowledgement under **IN-154571**. This confirms receipt only; Unity has not yet confirmed reproduction, development assignment, a fix, or a resolution date.
+
+The reporter can check status through Unity Service Desk. Access is controlled by Unity; this case number is not a public Issue Tracker entry. These notes summarize the investigation and are not an exact copy of the submitted form.
 
 **Suggested title:** Package Manager My Assets: Purchased date requests `desc` but receives oldest purchases first
 
@@ -89,11 +95,11 @@ An unsupported local Editor extension changes only purchase-date requests from d
 - https://discussions.unity.com/t/how-to-sort-packages-by-newest-first/1710144
 - https://discussions.unity.com/t/cannot-sort-by-purchased-date-latest-first/934590
 
-## Before submitting
+## Follow-up guidance
 
 - New-project reproduction without the workaround is recorded above for 6000.7.0b1. Include that version in the submitted report.
 - Add a screenshot showing the sort menu and an old purchase at the top.
 - Review attached Editor logs for credentials/account data; do not attach command lines containing access tokens or full purchase-response dumps.
 - Include the exact date/time because service behavior can change independently of Editor versions.
 
-This is a prepared report, not a submitted Unity issue.
+The report has been submitted as IN-154571. Reply to Unity's confirmation email with additional reproduction evidence if needed.

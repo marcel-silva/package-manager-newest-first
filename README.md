@@ -14,6 +14,8 @@ Unity 6000.4 requests `orderBy=purchased_date&order=desc`. On the service tested
 
 ## Unity 6.7 reproduction
 
+**Unity report: IN-154571.** Unity acknowledged receipt; reproduction, a fix, and an ETA have not yet been confirmed. See the [report notes](Documentation~/UNITY-BUG-REPORT.md).
+
 On 20 September 2026, the maintainer reproduced oldest-first ordering in a newly created URP project using **6000.7.0b1 (6f112f2bea37)** on Windows, without this workaround installed. The supplied screenshot shows Purchased date selected, an empty search, and RageSpline at the top with a purchase date of April 25, 2011. Project version and absence of the workaround were also checked on disk.
 
 The 6000.7 reference source still sends `orderBy=purchased_date&order=desc`; surrounding refactoring does not change that direction. This confirms the UI symptom in that beta on the tested account, not the precise backend cause. **Version 0.1.1 adds tested support for 6000.7.0b1:** Auto detection, refresh, pagination across 67 purchases, and disable/re-enable passed. See the [compatibility test](Documentation~/UNITY-6000.7-TEST.md). See the [reproduction and source comparison](Documentation~/UNITY-BUG-REPORT.md#unity-600070b1-runtime-reproduction).
