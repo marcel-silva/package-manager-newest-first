@@ -47,6 +47,20 @@ Unity's 6000.4 reference source maps the Purchased date option to `PurchasedDate
 
 **Inference:** the observed service semantics disagree with the Editor's request semantics. This does not establish the exact server-side cause or exclude account-specific behavior. The diagnostic does not establish cache corruption.
 
+## Unity 6000.7 source comparison
+
+Checked 20 September 2026 against UnityCsReference commit `830e212cf40cabf806fb7a15da6f2f3bc7008d37` on the `6000.7` branch. [Pinned AssetStorePurchases.cs source](https://github.com/Unity-Technologies/UnityCsReference/blob/830e212cf40cabf806fb7a15da6f2f3bc7008d37/Modules/PackageManagerUI/Editor/Services/AssetStore/AssetStorePurchases.cs).
+
+The mapping remains:
+
+```csharp
+PageSortOption.PurchasedDateDesc => "&orderBy=purchased_date&order=desc",
+```
+
+Compared with 6000.4, filters and collections were refactored, and query fragments now include their own leading `&`. Previously the caller appended that separator. The effective purchase-date request direction is unchanged.
+
+This establishes only that this file retains the same request semantics. It does **not** establish that Unity 6.7 reproduces the bug, that no fix exists elsewhere, or that the service remains affected. Runtime reproduction in a clean 6.7 project, without this workaround, is still pending. The package's 6000.4-only compatibility guard remains unchanged.
+
 ## Impact
 
 Recent purchases require scrolling/searching through older purchases. Deprecated products can dominate the first page simply because they were acquired long ago.

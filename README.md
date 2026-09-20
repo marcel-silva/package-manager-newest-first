@@ -12,11 +12,19 @@ Unity 6000.4 requests `orderBy=purchased_date&order=desc`. On the service tested
 - Not affiliated with or endorsed by Unity.
 - **Not eligible for Asset Store submission in its current form:** guideline 2.5.g prohibits use of internal Editor APIs discovered through reflection. Intended for direct source/Git distribution.
 
+## Unity 6.7 source comparison
+
+On 20 September 2026, inspection of Unity's 6000.7 reference source confirmed that Purchased date still sends `orderBy=purchased_date&order=desc`. Query construction and filtering were refactored, but the requested direction is unchanged. This is a **source-only finding**, not confirmation that the issue reproduces in the 6.7 Editor; service behavior can change independently. This package still supports only 6000.4.x. See the [comparison and pinned source](Documentation~/UNITY-BUG-REPORT.md#unity-60007-source-comparison).
+
 ## Install
 
 Download/clone this repository, then in Unity use **Window → Package Management → Package Manager → + → Install package from disk**, and select this repository's `package.json`.
 
-Once hosted on GitHub, users can install using the repository's HTTPS Git URL through **Install package from Git URL**. Pin a release tag rather than a moving branch. This repository does not include a fabricated publishing URL.
+Alternatively, choose **Install package from Git URL** and paste this release-pinned URL:
+
+```text
+https://github.com/marcel-silva/package-manager-newest-first.git#v0.1.0
+```
 
 Open **My Assets**, select **Purchased date**, and let Auto detection finish. If the window was already open, the extension requests a refresh after detection.
 

@@ -4,6 +4,10 @@
 
 Windows, Unity 6000.4.5f1, existing signed-in project and Asset Store account. Other operating systems and Unity releases have not been tested.
 
+## Unity 6000.7: source review only
+
+The 6000.7 reference source was inspected on 20 September 2026. `PurchasedDateDesc` still produces `orderBy=purchased_date&order=desc`; surrounding query/filter refactoring does not change that direction. See the [pinned source comparison](UNITY-BUG-REPORT.md#unity-60007-source-comparison). No 6.7 runtime test or package compatibility is claimed. Support remains limited to 6000.4.x.
+
 ## Confirmed in the running Editor
 
 - Local UPM installation and compilation succeeded without package compile errors.
