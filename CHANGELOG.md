@@ -1,10 +1,13 @@
 # Changelog
 
-## Unreleased
+## 0.1.1 — 2026-09-20
+
+- Added support for exactly Unity 6000.7.0b1 alongside 6000.4.x.
+- Verified compilation, Auto detection, refresh, pagination across 67 purchases, and disable/re-enable on Windows in 6000.7.0b1.
 
 - Documented the Unity 6000.7 source comparison: purchase-date requests still use `desc`.
-- Recorded maintainer reproduction in a new URP project on 6000.7.0b1 without the workaround. Package compatibility remains limited to 6000.4.x.
-- Added the published Git installation URL. No runtime or compatibility changes.
+- Recorded maintainer reproduction in a new URP project on 6000.7.0b1 without the workaround, followed by successful workaround testing.
+- Updated the release-pinned Git installation URL.
 
 ## 0.1.0 — 2026-09-20
 

@@ -59,7 +59,7 @@ PageSortOption.PurchasedDateDesc => "&orderBy=purchased_date&order=desc",
 
 Compared with 6000.4, filters and collections were refactored, and query fragments now include their own leading `&`. Previously the caller appended that separator. The effective purchase-date request direction is unchanged.
 
-This source comparison establishes only that this file retains the same request semantics. Separate runtime evidence is recorded below. The package's 6000.4-only compatibility guard remains unchanged.
+This source comparison establishes only that this file retains the same request semantics. Separate runtime evidence is recorded below. Version 0.1.1 subsequently adds support for the tested 6000.7.0b1 Editor.
 
 ## Unity 6000.7.0b1 runtime reproduction
 
@@ -74,7 +74,7 @@ The supplied screenshot shows:
 
 The project version was independently verified from ProjectVersion.txt. The project manifest and Assets/Packages source search contained no reference to this workaround. The screenshot is retained by the reporter; it has not been added to this public repository because it contains their purchase list.
 
-This is a new-project reproduction of the UI issue on the same account. It does not isolate account/service caches, establish behavior for all accounts, or repeat the direct asc/desc request comparison on 6.7. Workaround compatibility with 6.7 has not been tested.
+This is a new-project reproduction of the UI issue on the same account. It does not isolate account/service caches, establish behavior for all accounts, or repeat the direct asc/desc request comparison on 6.7. Subsequent workaround testing passed on 6000.7.0b1; see [compatibility validation](UNITY-6000.7-TEST.md).
 
 ## Impact
 

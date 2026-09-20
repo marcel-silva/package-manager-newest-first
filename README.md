@@ -6,7 +6,7 @@ Unity 6000.4 requests `orderBy=purchased_date&order=desc`. On the service tested
 
 ## Compatibility and status
 
-- Prototype targeting Unity **6000.4.x**, tested in **6000.4.5f1 on Windows**. Other Editor versions are deliberately disabled.
+- Supports **6000.4.x** and **6000.7.0b1**, tested in **6000.4.5f1 and 6000.7.0b1 on Windows**. Other versions, including later 6.7 betas, are deliberately disabled.
 - Uses **unsupported internal Editor APIs via reflection** and a Mono transparent proxy. Unity updates can break it.
 - No Editor binaries are modified. No external runtime dependencies; nothing is included in player builds.
 - Not affiliated with or endorsed by Unity.
@@ -16,7 +16,7 @@ Unity 6000.4 requests `orderBy=purchased_date&order=desc`. On the service tested
 
 On 20 September 2026, the maintainer reproduced oldest-first ordering in a newly created URP project using **6000.7.0b1 (6f112f2bea37)** on Windows, without this workaround installed. The supplied screenshot shows Purchased date selected, an empty search, and RageSpline at the top with a purchase date of April 25, 2011. Project version and absence of the workaround were also checked on disk.
 
-The 6000.7 reference source still sends `orderBy=purchased_date&order=desc`; surrounding refactoring does not change that direction. This confirms the UI symptom in that beta on the tested account, not the precise backend cause. **The workaround itself has not been validated on 6.7 and still supports only 6000.4.x.** See the [reproduction and source comparison](Documentation~/UNITY-BUG-REPORT.md#unity-600070b1-runtime-reproduction).
+The 6000.7 reference source still sends `orderBy=purchased_date&order=desc`; surrounding refactoring does not change that direction. This confirms the UI symptom in that beta on the tested account, not the precise backend cause. **Version 0.1.1 adds tested support for 6000.7.0b1:** Auto detection, refresh, pagination across 67 purchases, and disable/re-enable passed. See the [compatibility test](Documentation~/UNITY-6000.7-TEST.md). See the [reproduction and source comparison](Documentation~/UNITY-BUG-REPORT.md#unity-600070b1-runtime-reproduction).
 
 ## Install
 
@@ -25,7 +25,7 @@ Download/clone this repository, then in Unity use **Window → Package Managemen
 Alternatively, choose **Install package from Git URL** and paste this release-pinned URL:
 
 ```text
-https://github.com/marcel-silva/package-manager-newest-first.git#v0.1.0
+https://github.com/marcel-silva/package-manager-newest-first.git#v0.1.1
 ```
 
 Open **My Assets**, select **Purchased date**, and let Auto detection finish. If the window was already open, the extension requests a refresh after detection.

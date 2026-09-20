@@ -1,8 +1,8 @@
-# Local compatibility test: Unity 6000.7.0b1
+# Compatibility test: Unity 6000.7.0b1
 
 Tested on Windows in BugFound on 20 September 2026.
 
-This separate local checkout widens the version guard for **6000.7.0b1 only**. No other implementation changes were needed. The published v0.1.0 release remains unchanged and blocks 6.7.
+Tested first in a separate local checkout and incorporated into **v0.1.1**. The version guard now permits **6000.7.0b1 only** in addition to 6000.4.x. No other implementation changes were needed. The v0.1.0 release remains unchanged and blocks 6.7.
 
 - Local UPM installation and compilation passed.
 - Auto detected the service inversion and installed the HTTP factory decorator.

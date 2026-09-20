@@ -2,13 +2,13 @@
 
 ## Environment
 
-Workaround validation: Windows, Unity 6000.4.5f1, existing signed-in project and Asset Store account. Separate bug reproduction: Windows, Unity 6000.7.0b1, new URP project without the workaround. Other operating systems and workaround compatibility on other Unity releases have not been tested.
+Workaround validation: Windows, Unity 6000.4.5f1, existing signed-in project and Asset Store account. Separate bug reproduction: Windows, Unity 6000.7.0b1, new URP project without the workaround. Subsequent workaround validation also passed on 6000.7.0b1. Other operating systems and Editor versions have not been tested.
 
 ## Unity 6000.7: source review and maintainer reproduction
 
 The 6000.7 reference source was inspected on 20 September 2026. `PurchasedDateDesc` still produces `orderBy=purchased_date&order=desc`; surrounding query/filter refactoring does not change that direction. See the [pinned source comparison](UNITY-BUG-REPORT.md#unity-60007-source-comparison).
 
-The maintainer then reproduced the UI symptom in a new URP project using 6000.7.0b1 (6f112f2bea37), without the workaround. Their screenshot shows Purchased date selected and a 2011 purchase first. The project version and absence of workaround references in Assets/Packages were checked on disk. This is maintainer-provided runtime evidence, not a repeat of the asc/desc API probe on 6.7. The extension was not installed or tested there; package support remains limited to 6000.4.x.
+The maintainer then reproduced the UI symptom in a new URP project using 6000.7.0b1 (6f112f2bea37), without the workaround. Their screenshot shows Purchased date selected and a 2011 purchase first. The project version and absence of workaround references in Assets/Packages were checked on disk. This is maintainer-provided runtime evidence, not a repeat of the asc/desc API probe on 6.7. After that baseline reproduction, installation, compilation, Auto detection, refresh, pagination across 67 purchases, and disable/re-enable passed on 6000.7.0b1. Auto was left enabled. See [test details](UNITY-6000.7-TEST.md).
 
 ## Confirmed in the running Editor
 
